@@ -16,6 +16,7 @@
 }
 body{
     font-family: "Roboto", sans-serif;
+    scroll-behavior: smooth;
 }
 .container {
     padding-left: 25px;
@@ -549,7 +550,11 @@ header .nav-content nav a:hover::before {
 }
 #contact .content a{
     display: block;
-    padding: 15px 25px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 20px;
     font-weight: bold;
     color: white;
     background-color: var(--main-color);
