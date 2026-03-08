@@ -8,6 +8,7 @@ const loader = document.getElementById("loader");
 const ripple = document.querySelector(".lds-ripple");
 
 window.addEventListener("load", () => {
+  ripple.style.display = "none";
   loader.classList.add("hide");
 
   setTimeout(() => {
