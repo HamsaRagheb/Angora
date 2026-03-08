@@ -7,16 +7,13 @@
 const loader = document.getElementById("loader");
 const ripple = document.querySelector(".lds-ripple");
 
-setTimeout(() => {
-  document.body.style.overflowY = "auto";
-
+window.addEventListener("load", () => {
   loader.classList.add("hide");
-  ripple.style.display = "none";
 
   setTimeout(() => {
     loader.style.display = "none";
   }, 2000);
-}, 4000);
+});
 /**End Loader */
 /**
  * Start Header
