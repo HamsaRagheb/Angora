@@ -1,6 +1,6 @@
 <!-- @format -->
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -17,8 +17,23 @@
       href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
       rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
+      integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
   </head>
   <body>
+    <!-- Start Loader -->
+    <div id="loader">
+      <div class="lds-ripple">
+        <div></div>
+        <div></div>
+      </div>
+    </div>
+    <!-- End Loader -->
     <main>
       <!-- Start Go-up link -->
       <a class="go-up" href="#"><i class="fa-solid fa-angles-up"></i></a>
@@ -31,17 +46,17 @@
                 <img src="images/imgi_1_logo-white.png" alt="" />
               </a>
             </div>
-            <button class="toggler-button" aria-label="menue">
-              <i class="fa-solid fa-bars-staggered"></i>
-            </button>
             <nav>
-              <ul>
-                <li><a href="#">Home</a></li>
+              <button class="toggler-button" aria-label="menu">
+                <i class="fa-solid fa-bars-staggered"></i>
+              </button>
+              <ul class="links">
+                <li><a class="active" href="#">Home</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#team">Team</a></li>
                 <li><a href="#services">Services</a></li>
+                <li><a href="#reviews">Blog</a></li>
                 <li><a href="#contact">Contact</a></li>
-                <li><a href="#advices">Blog</a></li>
               </ul>
               <div class="social">
                 <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
@@ -60,8 +75,8 @@
             <h1>Focusedon Strategy.</h1>
           </div>
           <div class="control-icons">
-            <i class="fa-solid fa-angles-left"></i>
-            <i class="fa-solid fa-angles-right"></i>
+            <i class="fa-solid fa-angles-left arrow-left"></i>
+            <i class="fa-solid fa-angles-right arrow-right"></i>
           </div>
           <a href="#about" class="to-bottom"
             ><i class="fa-solid fa-angles-down"></i
@@ -109,7 +124,7 @@
               <div class="skill">
                 <h6>Branding</h6>
                 <div class="skill-progress">
-                  <div class="bar-percentage" style="width: 80%">
+                  <div class="bar-percentage" data-width="80%">
                     <span class="percentage">80%</span>
                   </div>
                 </div>
@@ -117,7 +132,7 @@
               <div class="skill">
                 <h6>Web Design</h6>
                 <div class="skill-progress">
-                  <div class="bar-percentage" style="width: 95%">
+                  <div class="bar-percentage" data-width="95%">
                     <span class="percentage">95%</span>
                   </div>
                 </div>
@@ -125,7 +140,7 @@
               <div class="skill">
                 <h6>Graphic Design</h6>
                 <div class="skill-progress">
-                  <div class="bar-percentage" style="width: 85%">
+                  <div class="bar-percentage" data-width="85%">
                     <span class="percentage">85%</span>
                   </div>
                 </div>
@@ -133,7 +148,7 @@
               <div class="skill">
                 <h6>Development</h6>
                 <div class="skill-progress">
-                  <div class="bar-percentage" style="width: 70%">
+                  <div class="bar-percentage" data-width="70%">
                     <span class="percentage">70%</span>
                   </div>
                 </div>
@@ -243,8 +258,8 @@
         </div>
       </section>
       <!-- End Team -->
-      <!-- Start Contact -->
-      <section id="contact">
+      <!-- Start Ideas -->
+      <section id="ideas">
         <div class="container">
           <div class="content">
             <h2>Do you have any ideas?</h2>
@@ -252,7 +267,7 @@
           </div>
         </div>
       </section>
-      <!-- End Contact -->
+      <!-- End Ideas -->
       <!-- Start Services -->
       <section id="services" class="mx-auto py-5">
         <div class="container">
@@ -390,49 +405,63 @@
               Pellentesque elementum libero enim.
             </p>
           </div>
-          <div class="cards">
-            <div class="card">
-              <div class="image">
-                <img src="images/imgi_10_client-1.png" alt="" />
-              </div>
-              <h5>Martin Jack</h5>
-              <span>From Hooli</span>
+          <div class="owl-carousel owl-theme">
+            <div
+              class="client clicked"
+              data-name="Martin Jack"
+              data-company="From Hooli"
+              data-review="Vestibulum lectus massa, volutpat ut tristique nec, volutpat in turpis. In vehicula tempus odio. Nullam enim ligula."
+            >
+              <img src="images/imgi_10_client-1.png" alt="img" />
             </div>
-            <div class="card">
-              <div class="image">
-                <img src="images/imgi_11_client-2.png" alt="" />
-              </div>
-              <h5>David Dowsy</h5>
-              <span>From Globex</span>
+            <div
+              class="client"
+              data-name="David Dowsy"
+              data-company="From Globex"
+              data-review="Suspendisse non velit lacus. Mauris efficitur lorem."
+            >
+              <img src="images/imgi_11_client-2.png" alt="" />
             </div>
-            <div class="card">
-              <div class="image">
-                <img src="images/imgi_12_client-3.png" alt="" />
-              </div>
-              <h5>Dogals Kosta</h5>
-              <span>From Soylent</span>
+            <div
+              class="client"
+              data-name="Dogals Kosta"
+              data-company="From Soylent"
+              data-review="Aenean sit amet est orci. Aenean at nisi eget nulla lobortis commodo. Nam eget lorem in ex aliquam dapibus."
+            >
+              <img src="images/imgi_12_client-3.png" alt="" />
             </div>
-            <div class="card">
-              <div class="image">
-                <img src="images/imgi_13_client-4.png" alt="" />
-              </div>
-              <h5>Anthony Lee</h5>
-              <span>From Initech</span>
+            <div
+              class="client"
+              data-name="Anthony Lee"
+              data-company="From Initech"
+              data-review="Nunc accumsan finibus sollicitudin. Integer malesuada purus."
+            >
+              <img src="images/imgi_13_client-4.png" alt="" />
+            </div>
+            <div
+              class="client"
+              data-name="Jane Doris"
+              data-company="From Acme"
+              data-review="Fusce euismod eget nulla a tempus. Pellentesque in varius metus. Fusce iaculis cursus ante, vel vestibulum dui sagittis vitae."
+            >
+              <img src="images/imgi_14_client-5.png" alt="" />
             </div>
           </div>
-          <div class="quote">
-            <i class="fa-solid fa-quote-left"></i>
-            <blockquote>
+          <div class="review-info text-center">
+            <h5 class="client-name">Martin Jack</h5>
+            <span class="client-comp">From Hooli</span>
+            <p class="review-text">
+              <i class="fa-solid fa-quote-left"></i>
               Vestibulum lectus massa, volutpat ut tristique nec, volutpat in
               turpis. In vehicula tempus odio. Nullam enim ligula.
-            </blockquote>
-            <i class="fa-solid fa-quote-right"></i>
+              <i class="fa-solid fa-quote-right"></i>
+            </p>
           </div>
         </div>
       </section>
       <!-- End Reviews -->
-      <!--Start advices-->
-      <section id="advices">
+      <!--Start contact-->
+      <section id="contact">
         <div class="container">
           <div class="main-title text-center mx-auto my-5">
             <h2 class="mb-4 fs-1 position-relative" data="G">Get In Touch</h2>
@@ -483,7 +512,7 @@
           </div>
         </div>
       </section>
-      <!--End advices-->
+      <!--End contact-->
     </main>
     <!-- Start Footer -->
     <footer>
@@ -646,9 +675,20 @@
       </div>
     </footer>
     <!-- End Footer -->
-    <!-- Font Awesome JS script -->
-    <script src="js/all.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+      integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"
+      integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
     <!-- Bootstarp JS script -->
     <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/script.js"></script>
   </body>
 </html>
