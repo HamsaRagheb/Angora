@@ -3,15 +3,15 @@
  *
  * @format
  */
-
 const loader = document.getElementById("loader");
 const ripple = document.querySelector(".lds-ripple");
 
-window.addEventListener("load", () => {
-  ripple.style.display = "none";
+document.addEventListener("DOMContentLoaded", () => {
   loader.classList.add("hide");
   document.body.style.overflowY = "auto";
+
   setTimeout(() => {
+    ripple.style.display = "none";
     loader.style.display = "none";
   }, 2000);
 });
