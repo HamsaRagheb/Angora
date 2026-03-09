@@ -7,13 +7,18 @@ const loader = document.getElementById("loader");
 const ripple = document.querySelector(".lds-ripple");
 
 function hideLoader(){
+
   ripple.style.display = "none";
-  loader.classList.add("hide");
-  document.body.style.overflowY = "auto";
+
+  setTimeout(() => {
+    loader.classList.add("hide");
+    document.body.style.overflowY = "auto";
+  }, 500);
 
   setTimeout(() => {
     loader.style.display = "none";
-  }, 2000);
+  }, 2500);
+
 }
 
 window.addEventListener("load", hideLoader);
