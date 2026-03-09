@@ -6,7 +6,7 @@
 const loader = document.getElementById("loader");
 const ripple = document.querySelector(".lds-ripple");
 
-document.addEventListener("DOMContentLoaded", () => {
+function hideLoader(){
   loader.classList.add("hide");
   document.body.style.overflowY = "auto";
 
@@ -14,7 +14,11 @@ document.addEventListener("DOMContentLoaded", () => {
     ripple.style.display = "none";
     loader.style.display = "none";
   }, 2000);
-});
+}
+
+window.addEventListener("load", hideLoader);
+
+setTimeout(hideLoader, 5000);
 /**End Loader */
 /**
  * Start Header
