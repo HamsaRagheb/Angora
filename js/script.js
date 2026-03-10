@@ -6,24 +6,21 @@
 const loader = document.getElementById("loader");
 const ripple = document.querySelector(".lds-ripple");
 
-function hideLoader(){
+let loaderTimeout = setTimeout(hideLoader, 5000);
+
+function hideLoader() {
+  clearTimeout(loaderTimeout);
 
   ripple.style.display = "none";
-
-  setTimeout(() => {
-    loader.classList.add("hide");
-    document.body.style.overflowY = "auto";
-  }, 500);
+  loader.classList.add("hide");
+  document.body.style.overflowY = "auto";
 
   setTimeout(() => {
     loader.style.display = "none";
-  }, 2500);
-
+  }, 2000);
 }
 
 window.addEventListener("load", hideLoader);
-
-setTimeout(hideLoader, 5000);
 /**End Loader */
 /**
  * Start Header
